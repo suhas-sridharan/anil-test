@@ -1,7 +1,6 @@
 applications:
 - name: PCF_DOCKER_FULL_PATH_PUBLIC_OVERRIDE
-  memory: ((PCF_APP_MEMORY))
+  memory: ((PCF_APP_MEMORYT))
   instances : ((INSTANCEST))
   random-route: true
-  docker:
-   image: registry.hub.docker.com/harness/todolist_ga:latest
+
