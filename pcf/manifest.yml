@@ -3,5 +3,3 @@ applications:
   memory: 400M
   instances : 1
   random-route: true
-  docker:
-   image: registry.hub.docker.com/harness/todolist_ga:latest
