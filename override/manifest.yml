@@ -3,4 +3,3 @@ applications:
   memory: ((PCF_APP_MEMORYT))
   instances : ((INSTANCEST))
   random-route: true
-
