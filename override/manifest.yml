@@ -1,7 +1,7 @@
 applications:
 - name: PCF_DOCKER_FULL_PATH_PUBLIC_OVERRIDE
   memory: 700M
-  instances : 2
+  instances : ((INSTANCES))
   random-route: true
   docker:
    image: registry.hub.docker.com/harness/todolist_ga:latest
