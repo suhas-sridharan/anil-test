@@ -1,50 +1,30 @@
-resource "random_id" "server" {
-  keepers = {
-    azi_id = 1
-  }
-
-  byte_length = 8
+variable "subscription_id" {
 }
-
+variable "client_id" {
+}
+variable "client_secret" {
+}
+variable "tenant_id" {
+}
+# Configure the Azure Provider
+provider "azurerm" {
+  # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
+  version = "=2.4.0"
+  subscription_id = var.subscription_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
+  tenant_id       = var.tenant_id
+  features {}
+}
+# Create a resource group
 resource "azurerm_resource_group" "example" {
-  name     = "some-resource-group"
+  name     = "example-resources"
   location = "West Europe"
 }
-
-resource "azurerm_app_service_plan" "example" {
-  name                = "some-app-service-plan"
-  location            = azurerm_resource_group.example.location
+# Create a virtual network within the resource group
+resource "azurerm_virtual_network" "example" {
+  name                = "example-network"
   resource_group_name = azurerm_resource_group.example.name
-
-  sku {
-    tier = "Standard"
-    size = "S1"
-  }
-}
-
-resource "azurerm_app_service" "example" {
-  name                = random_id.server.hex
   location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  app_service_plan_id = azurerm_app_service_plan.example.id
-
-  site_config {
-    java_version           = "1.8"
-    java_container         = "JETTY"
-    java_container_version = "9.3"
-  }
-}
-
-resource "azurerm_app_service_slot" "example" {
-  name                = random_id.server.hex
-  app_service_name    = azurerm_app_service.example.name
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  app_service_plan_id = azurerm_app_service_plan.example.id
-
-  site_config {
-    java_version           = "1.8"
-    java_container         = "JETTY"
-    java_container_version = "9.3"
-  }
+  address_space       = ["10.0.0.0/16"]
 }
