@@ -49,7 +49,7 @@ resource "azurerm_app_service" "main" {
   }
   
   app_settings = {
-    "production-key" = "production-value"
+    "production_key" = "production_value"
   }
 
   connection_string {
@@ -73,7 +73,7 @@ resource "azurerm_app_service_slot" "example" {
   }
   
   app_settings = {
-    "stage-key" = "stage-value"
+    "stage_key" = "stage_value"
   }
 
   connection_string {
