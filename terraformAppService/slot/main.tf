@@ -47,8 +47,9 @@ resource "azurerm_app_service" "main" {
     java_container         = "JETTY"
     java_container_version = "9.3"
   }
-  
-  resource "azurerm_app_service_slot" "example" {
+}
+
+resource "azurerm_app_service_slot" "example" {
   name                = "stage"
   app_service_name    = azurerm_app_service.main.name
   location            = azurerm_resource_group.main.location
