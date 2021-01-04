@@ -47,6 +47,16 @@ resource "azurerm_app_service" "main" {
     java_container         = "JETTY"
     java_container_version = "9.3"
   }
+  
+  app_settings = {
+    "production-key" = "production-value"
+  }
+
+  connection_string {
+    name  = "Database"
+    type  = "SQLServer"
+    value = "Server=some-server.mydomain.com;Integrated Security=SSPI"
+  }
 }
 
 resource "azurerm_app_service_slot" "example" {
@@ -60,5 +70,15 @@ resource "azurerm_app_service_slot" "example" {
     java_version           = "1.8"
     java_container         = "JETTY"
     java_container_version = "9.3"
+  }
+  
+  app_settings = {
+    "stage-key" = "stage-value"
+  }
+
+  connection_string {
+    name  = "Database"
+    type  = "SQLServer"
+    value = "Server=some-server.mydomain.com;Integrated Security=SSPI-stage"
   }
 }
