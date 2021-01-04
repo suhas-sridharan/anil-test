@@ -20,7 +20,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "main" {
   name     = "anil-terraform-resourceGroup"
-  location = var.location
+  location = "West Europe"
 }
 
 resource "azurerm_app_service_plan" "main" {
