@@ -19,7 +19,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "anil-terraform-appservice-rg"
+  name     = "anil-terraform-resourceGroup"
   location = var.location
 }
 
