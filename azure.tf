@@ -17,14 +17,14 @@ provider "azurerm" {
   features {}
 }
 # Create a resource group
-resource "azurerm_resource_group" "anil_terraform_rg" {
+resource "azurerm_resource_group" "anil-tf-rg" {
   name     = "example-resources"
   location = "West Europe"
 }
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "example" {
   name                = "example-network"
-  resource_group_name = azurerm_resource_group.anil_terraform_rg.name
-  location            = azurerm_resource_group.anil_terraform_rg.location
+  resource_group_name = azurerm_resource_group.anil-tf-rg.name
+  location            = azurerm_resource_group.anil-tf-rg.location
   address_space       = ["10.0.0.0/16"]
 }
