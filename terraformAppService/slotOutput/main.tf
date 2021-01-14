@@ -24,7 +24,7 @@ resource "azurerm_resource_group" "main" {
 }
 
 resource "azurerm_app_service_plan" "main" {
-  name                = "AppServicePlan-Terraform"
+  name                = "AppServicePlan-Terraform-Test"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   kind                = "Linux"
