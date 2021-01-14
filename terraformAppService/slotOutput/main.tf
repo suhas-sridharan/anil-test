@@ -19,7 +19,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "anil-terraform-resourceGroup"
+  name     = "anil-terraform-resourceGroup-test"
   location = "West Europe"
 }
 
