@@ -6,6 +6,12 @@ variable "client_secret" {
 }
 variable "tenant_id" {
 }
+variable "resource_group" {
+}
+variable "web_app" {
+}
+variable "deployment_slot" {
+}
 
 # Configure the Azure Provider
 provider "azurerm" {
@@ -18,15 +24,18 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "main" {
-  name     = "anil-terraform-resourceGroup-output"
-  location = "West Europe"
-}
-
-output "subVar" {
+output "subId" {
   value = "${var.subscription_id}"
 }
 
-output "newRg" {
-  value = "${azurerm_resource_group.main.name}"
+output "resourceGroup" {
+  value = "${var.resource_group}"
+}
+
+output "webApp" {
+  value = "${var.web_app}"
+}
+
+output "deploymentSlot" {
+  value = "${var.deployment_slot}"
 }
