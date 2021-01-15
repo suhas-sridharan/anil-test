@@ -83,11 +83,11 @@ resource "azurerm_app_service_slot" "example" {
   }
 }
 
-output "newRg" {
+output "resourceGroup" {
   value = "${azurerm_resource_group.main.name}"
 }
 
-output "newApp" {
+output "webApp" {
   value = "${azurerm_app_service.main.name}"
 }
 
