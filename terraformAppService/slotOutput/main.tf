@@ -83,6 +83,10 @@ resource "azurerm_app_service_slot" "example" {
   }
 }
 
+output "subId" {
+  value = "${var.subscription_id}"
+}
+
 output "resourceGroup" {
   value = "${azurerm_resource_group.main.name}"
 }
