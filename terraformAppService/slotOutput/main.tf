@@ -43,13 +43,13 @@ resource "azurerm_app_service" "main" {
   app_service_plan_id = azurerm_app_service_plan.main.id
 
   site_config {
-    java_version           = "1.8"
-    java_container         = "JETTY"
-    java_container_version = "9.3"
+    linux_fx_version = "DOCKER|mcr.microsoft.com/appsvc/staticsite:latest"
+    always_on        = "true"
   }
   
   app_settings = {
     "production_key" = "production_value"
+     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
   }
 
   connection_string {
@@ -67,13 +67,20 @@ resource "azurerm_app_service_slot" "example" {
   app_service_plan_id = azurerm_app_service_plan.main.id
 
   site_config {
-    java_version           = "1.8"
-    java_container         = "JETTY"
-    java_container_version = "9.3"
+    linux_fx_version = "DOCKER|mcr.microsoft.com/appsvc/staticsite:latest"
+    always_on        = "true"
   }
   
   app_settings = {
     "stage_key" = "stage_value"
+     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
+
+#     /*
+#     Settings for private Container Registires  
+#     DOCKER_REGISTRY_SERVER_URL      = ""
+#     DOCKER_REGISTRY_SERVER_USERNAME = ""
+#     DOCKER_REGISTRY_SERVER_PASSWORD = ""
+#     */
   }
 
   connection_string {
