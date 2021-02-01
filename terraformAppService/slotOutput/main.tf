@@ -74,13 +74,6 @@ resource "azurerm_app_service_slot" "example" {
   app_settings = {
     "stage_key" = "stage_value"
      WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
-
-#     /*
-#     Settings for private Container Registires  
-#     DOCKER_REGISTRY_SERVER_URL      = ""
-#     DOCKER_REGISTRY_SERVER_USERNAME = ""
-#     DOCKER_REGISTRY_SERVER_PASSWORD = ""
-#     */
   }
 
   connection_string {
