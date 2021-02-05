@@ -59,30 +59,6 @@ resource "azurerm_app_service" "main" {
   }
 }
 
-resource "azurerm_app_service_slot" "example" {
-  name                = "terraformStage"
-  app_service_name    = azurerm_app_service.main.name
-  location            = azurerm_resource_group.main.location
-  resource_group_name = azurerm_resource_group.main.name
-  app_service_plan_id = azurerm_app_service_plan.main.id
-
-  site_config {
-    linux_fx_version = "DOCKER|mcr.microsoft.com/appsvc/staticsite:latest"
-    always_on        = "true"
-  }
-  
-  app_settings = {
-    "stage_key" = "stage_value"
-     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
-  }
-
-  connection_string {
-    name  = "Database"
-    type  = "SQLServer"
-    value = "Server=some-server.mydomain.com;Integrated Security=SSPI-stage"
-  }
-}
-
 output "subId" {
   value = "${var.subscription_id}"
 }
