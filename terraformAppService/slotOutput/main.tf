@@ -59,7 +59,7 @@ resource "azurerm_app_service" "main" {
   }
 }
 
-esource "azurerm_app_service_slot" “main” {
+resource "azurerm_app_service_slot" “main” {
   name                = "terraformStage"
   app_service_name    = azurerm_app_service.main.name
   location            = azurerm_resource_group.main.location
