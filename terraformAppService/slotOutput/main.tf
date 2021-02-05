@@ -78,6 +78,6 @@ output "webApp" {
   value = "${azurerm_app_service.main.name}"
 }
 
-output "deploymentSlot" {
-  value = "${azurerm_app_service_slot.example.name}"
+output "virtualNetwork" {
+  value = "${azurerm_virtual_network.main.name}"
 }
