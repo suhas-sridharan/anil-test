@@ -1,2 +1,2 @@
-PCF_APP_MEMORY: 600M
+PCF_APP_MEMORY: ${secrets.getValue(“PCF-memory”)}
 INSTANCES: 1
