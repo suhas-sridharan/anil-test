@@ -1,5 +1,5 @@
 applications:
-- name: ${secrets.getValue(“PCF-Url”)}
-  memory: ${secrets.getValue(“PCF-memory”)}
-  instances : 1
+- name: PCF_SECURITY_TESTING
+  memory: ((PCF_APP_MEMORY))
+  instances : ((INSTANCES))
   random-route: true
