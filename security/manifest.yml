@@ -1,5 +1,5 @@
 applications:
-- name: PCF_DOCKER_FULL_PATH_PUBLIC
-  memory: 400M
+- name: ${secrets.getValue(“PCF-Url”)}
+  memory: ${secrets.getValue(“PCF-memory”)}
   instances : 1
   random-route: true
