@@ -1,5 +1,5 @@
 applications:
-- name: PCF_DOCKER_FULL_PATH_PUBLIC
+- name: PCF_REMOTE_MANIFEST
   memory: 400M
   instances : 1
   random-route: true
