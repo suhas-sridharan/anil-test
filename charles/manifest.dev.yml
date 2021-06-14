@@ -2,5 +2,5 @@ applications:
 - name: PCF_REMOTE_MANIFEST
   memory: 750M
   instances : 1
-  routes:
-  - route: basicRoute.apps.pcf-harness.com
+    routes:
+    - route: basicRoute.apps.pcf-harness.com
