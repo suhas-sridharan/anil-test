@@ -1,0 +1,5 @@
+applications:
+- name: PCF_REMOTE_MANIFEST
+  memory: ((PCF_APP_MEMORY))
+  instances : 1
+  random-route: true
