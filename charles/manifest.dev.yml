@@ -1,5 +1,5 @@
 applications:
 - name: PCF_REMOTE_MANIFEST
-  memory: 500M
+  memory: 750M
   instances : 1
   random-route: true
