@@ -1,5 +1,5 @@
 applications:
-- name: PCF_REMOTE
+- name: AnilService
   memory: ((PCF_APP_MEMORY))
   instances : 2
   random-route: true
