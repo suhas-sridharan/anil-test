@@ -1,5 +1,5 @@
 applications:
 - name: PCF_REMOTE
   memory: ((PCF_APP_MEMORY))
-  instances : 1
+  instances : 2
   random-route: true
