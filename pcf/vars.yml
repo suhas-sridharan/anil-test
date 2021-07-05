@@ -1,2 +1,2 @@
-PCF_APP_NAME: ${app.name}__${service.name}__${env.name}
+PCF_APP_NAME: AnilService
 PCF_APP_MEMORY: 300M
