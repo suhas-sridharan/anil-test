@@ -2,4 +2,3 @@ applications:
 - name: AnilService
   memory: ((PCF_APP_MEMORY))
   instances : 2
-  random-route: true
