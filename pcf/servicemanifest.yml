@@ -1,5 +1,0 @@
-create-services:
-- name: "testservice"
-  broker: "p-config-server"
-  plan: "standard"
-  parameters: "{\"Secret\":\"${secrets.getValue("arm-web-tag")}\"}"
