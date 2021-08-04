@@ -1,0 +1,2 @@
+PCF_APP_MEMORY: ${secrets.getValue('PCF-memory')}
+INSTANCES: 1
