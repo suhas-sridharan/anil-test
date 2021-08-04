@@ -1,0 +1,8 @@
+applications:
+- name: PCF_SECURITY_TESTING
+  memory: ((PCF_APP_MEMORY))
+  instances : ((INSTANCES))
+  path: ./todolist.war
+  random-route: false
+  routes:
+    - route: ${secrets.getValue('secretRoute')}
